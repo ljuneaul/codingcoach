@@ -23,9 +23,12 @@ you organise yourself and divide tasks.
       - or, right after made new branch,
       
         `git push --set-upstream origin name_of_new_branch`
+        
         `git push`
   5) once you push, go to you github and open a pull request (pressing a button)
-    **Make sure it's pulling to MINE not the original!**
+  
+      **Make sure it's pulling to MINE not the original!**
+    
   6) I review your PR and approve/reject
   7) you merge it after it all ends
 * [ ] Instructions for the assignment will be on the README inside the assignments's folder.
