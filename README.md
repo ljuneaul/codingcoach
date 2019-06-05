@@ -1,4 +1,3 @@
-this is test
 # Coding coach assignments for mentees
 
 ## Purpose of the repo
