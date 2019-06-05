@@ -14,6 +14,13 @@ on slack/skype). This will help you stay organized and will allow me to see how
 you organise yourself and divide tasks.
 * [x] Fork this repo
 * [ ] Go to the project folder and work on it (Do not add files to the root folder where this README is)
+  1) fork the assignment repo (my github, coding coach repo)
+  2) clone that repo to your local machine
+  3) `git checkout -b <name_of_your_branch>`
+  4) do some work, commit and push (can be several commits/pushes
+  5) once you push, go to you github and open a pull request (pressing a button)
+  6) I review your PR and approve/reject
+  7) you merge it after it all ends
 * [ ] Instructions for the assignment will be on the README inside the assignments's folder.
 
 *NOTES*
