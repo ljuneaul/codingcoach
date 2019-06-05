@@ -21,6 +21,7 @@ you organise yourself and divide tasks.
   4) do some work, commit and push (can be several commits/pushes)
       - `git push original name_of_current_branch`
       - or, right after made new branch,
+      
         `git push --set-upstream origin name_of_new_branch`
         `git push`
   5) once you push, go to you github and open a pull request (pressing a button)
