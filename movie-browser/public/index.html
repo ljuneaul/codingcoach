@@ -7,7 +7,27 @@
     <title>Movie browser</title>
   </head>
   <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="app"></div>
+    <!-- <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="app"></div> -->
+    <script>
+      let movies = [];
+      // console.log(movies)
+      // Create a request variable and assign a new XMLHttpRequest object to it.
+      const request = new XMLHttpRequest()
+      request.open('GET', 'https://ghibliapi.herokuapp.com/films', true)
+      request.onload = function() {
+        // Begin accessing JSON data
+        const data = JSON.parse(this.response)
+
+        if (request.status >= 200 && request.status < 400) {
+          data.forEach(movie => movies.push(movie));
+        } else {console.log('error')};
+        console.log(data[0].title);
+        console.log(data[0].description);
+      }
+      request.send();
+      console.log(movies);
+
+    </script>
   </body>
 </html>
