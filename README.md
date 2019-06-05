@@ -18,8 +18,13 @@ you organise yourself and divide tasks.
   1) fork the assignment repo (my github, coding coach repo)
   2) clone that repo to your local machine
   3) `git checkout -b <name_of_your_branch>`
-  4) do some work, commit and push (can be several commits/pushes
+  4) do some work, commit and push (can be several commits/pushes)
+      - `git push original name_of_current_branch`
+      - or, right after made new branch,
+        `git push --set-upstream origin name_of_new_branch`
+        `git push`
   5) once you push, go to you github and open a pull request (pressing a button)
+    **Make sure it's pulling to MINE not the original!**
   6) I review your PR and approve/reject
   7) you merge it after it all ends
 * [ ] Instructions for the assignment will be on the README inside the assignments's folder.
