@@ -29,7 +29,9 @@ you organise yourself and divide tasks.
       **Make sure it's pulling to MINE not the original!**
     
   6) I review your PR and approve/reject
-  7) you merge it after it all ends
+  7) local, go to master, pull
+  8) repeat 3~7
+  9) you merge it after it all ends
 * [ ] Instructions for the assignment will be on the README inside the assignments's folder.
 
 *NOTES*
