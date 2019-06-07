@@ -40,7 +40,7 @@ const movie = {
 const App = () => {
   return (
     <div>
-      Movie Browser
+      {/* Movie Browser */}
       {/* TODO: makes group of cards */}
       <Card {...movie}/>
     </div>

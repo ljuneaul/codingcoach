@@ -2,7 +2,7 @@ import React from 'react';
 
 // toogle: https://stackoverflow.com/questions/29913387/show-hide-components-in-reactjs
 class Card extends React.Component{
-    state = {isDetailShown: false} // status not working
+    state = {isDetailShown: false}
 
     handleClick = () => {
         this.setState(preState => ({isDetailShown: !preState.isDetailShown}));
