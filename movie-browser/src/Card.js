@@ -1,8 +1,11 @@
-// failed to import into App.js
 import React from 'react';
-
-const Card = () => {
+export default function Card(props) {
     return (
-        <p>test</p>
-    )
-}
+        <div className="card col-6">
+        <img className="card-img-top" src="https://via.placeholder.com/200x100.png" alt={props.title}/>
+        <div className="card-body">
+            <h5 className="card-title"> { props.title } </h5>
+            <p className="card-text"> { props.description } </p>
+        </div>
+        </div>
+    )}
