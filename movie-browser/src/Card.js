@@ -1,6 +1,7 @@
 import React from 'react';
+import CardDetail from './CardDetail.js'
 
-// toogle: https://stackoverflow.com/questions/29913387/show-hide-components-in-reactjs
+// toggle: https://stackoverflow.com/questions/29913387/show-hide-components-in-reactjs
 class Card extends React.Component{
     state = {isDetailShown: false}
 
@@ -22,17 +23,5 @@ class Card extends React.Component{
     }
 }
 
-class CardDetail extends React.Component {
-    render() {
-        return (
-            <div>
-                <p>producer: { this.props.producer }</p>
-                <p>rt_score: { this.props.rt_score }</p>
-                <p>{ this.props.description }</p>
-                {/* TODO: loop through people, spacies + should I get locations/vehicles? */}
-            </div>
-        );
-    }
-}
 
 export default Card;
