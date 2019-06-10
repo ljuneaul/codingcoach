@@ -32,6 +32,7 @@ you organise yourself and divide tasks.
       **Make sure it's pulling to MINE not the original!**
     
   7) I review your PR and approve/reject
+      - assign me as reviewer (on the right menu) 
   8) local, go to master, pull
   9) repeat 3~7
   10) you merge it after it all ends
