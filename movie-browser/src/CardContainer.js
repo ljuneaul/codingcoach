@@ -17,9 +17,12 @@ export class CardContainer extends React.Component {
 
   render() {
     const { movies } = this.state;
-    return movies
-        .map(movie => 
-            <Card key={movie.id} {...movie} />
-            );
+    return (
+        <div className='row'>
+            {this.state.movies.map(movie => 
+                <Card key={movie.id} {...movie} />
+            )}
+        </div>
+    )
   }
 }
