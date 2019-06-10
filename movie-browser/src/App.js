@@ -1,14 +1,13 @@
 /* eslint-disable no-unused-vars */
 import React from 'react'
-import Card from './view/Card.js'
-import movie from './data/DummyMovieData.js'
+import { CardContainer } from './CardContainer'
 
-// TODO: makes group of cards
+export const url = 'https://ghibliapi.herokuapp.com/films'
 
 const App = () => {
   return (
     <div>
-      <Card {...movie}/>
+      <CardContainer />
     </div>
   )
 }
