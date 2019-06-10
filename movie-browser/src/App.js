@@ -6,6 +6,7 @@ import ApiReader from './model/ApiReader';
 // *** constant(s)
 const url = 'https://ghibliapi.herokuapp.com/films'
 
+// *** Actual App
 class App extends React.Component {
   state = {movies: []};
 
