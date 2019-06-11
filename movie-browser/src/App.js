@@ -1,16 +1,34 @@
 /* eslint-disable no-unused-vars */
 import React from 'react'
-import Card from './view/Card.js'
-import movie from './data/DummyMovieData.js'
+import CardContainer from './CardContainer'
+import ApiReader from './model/ApiReader';
 
-// TODO: makes group of cards
+// *** constant(s)
+const url = 'https://ghibliapi.herokuapp.com/films'
 
-const App = () => {
-  return (
-    <div>
-      <Card {...movie}/>
-    </div>
-  )
+// *** Actual App
+class App extends React.Component {
+  state = {movies: []};
+
+  // *** running ApiReader when mounted
+  componentDidMount() {
+    this.fetchData();
+  }
+
+  async fetchData() {
+    const data = await ApiReader(url);
+    this.setState({ movies: data });
+  }
+
+  // *** display
+  render() {
+    const { movies } = this.state;
+    return (
+      <div>
+        <CardContainer movies={movies}  />
+      </div>
+    )
+  }
 }
 
 export default App
