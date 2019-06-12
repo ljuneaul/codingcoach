@@ -27,7 +27,7 @@ class App extends React.Component {
   handleClickButton = () => {
     if (this.state.btnTxt === btnTxtDef) {
       this.setState({
-        btnTxt: "hide all"
+        btnTxt: "Hide all"
       })
     } else {
       this.setState({
