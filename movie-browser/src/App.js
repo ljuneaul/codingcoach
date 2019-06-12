@@ -6,13 +6,14 @@ import ApiReader from './model/ApiReader';
 
 // *** constant(s)
 const url = 'https://ghibliapi.herokuapp.com/films'
+const btnTxtDef = "View all"
 
 // TODO: fix sorting by year. have no idea why it works for score but not for year
 // TODO: makes button working
 
 // *** Actual App
 class App extends React.Component {
-  state = {movies: [], featuredMovieIndex: 0, buttonText: "View all" };
+  state = {movies: [], featuredMovieIndex: 0, btnTxt: btnTxtDef};
 
   // *** running ApiReader when mounted
   componentDidMount() {
@@ -24,13 +25,13 @@ class App extends React.Component {
   })
 
   handleClickButton = () => {
-    if (this.state.buttonText === "View all") {
+    if (this.state.btnTxt === btnTxtDef) {
       this.setState({
-        buttonText: "hide all"
+        btnTxt: "hide all"
       })
     } else {
       this.setState({
-        buttonText: "View all"
+        btnTxt: btnTxtDef
       })
     }
     
@@ -38,6 +39,7 @@ class App extends React.Component {
 
   async fetchData() {
     const data = await ApiReader(url)
+
     data.sort((a, b) => b.rt_score - a.rt_score)
       .sort((a, b) => b.year - a.year)
     
@@ -47,12 +49,13 @@ class App extends React.Component {
 
   // *** display
   render() {
-    const { movies, featuredMovieIndex, buttonText } = this.state;
+    const { movies, featuredMovieIndex, btnTxt } = this.state;
+
     return (
       <div>
         <FeaturedMovie movie={movies[featuredMovieIndex]}  />
         <CardContainer movies={movies}  />  {/* limit number of data */}
-        <button onClick={this.handleClickButton}>{ buttonText }</button>
+        <button onClick={this.handleClickButton}>{ btnTxt }</button>
       </div>
     )
   }
