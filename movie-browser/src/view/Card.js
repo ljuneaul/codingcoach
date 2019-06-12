@@ -11,7 +11,7 @@ class Card extends React.Component{
 
   render() {
     return (
-      <div className="card col-6" onClick={() => this.handleClick()}>
+      <div className="card col-4" onClick={() => this.handleClick()}>
         <img className="card-img-top" src="https://via.placeholder.com/200x100.png" alt={this.props.title}/>
         <div className="card-body">
           <h5 className="card-title"> { this.props.title } </h5>
