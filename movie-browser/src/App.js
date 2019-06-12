@@ -5,7 +5,9 @@ import ApiReader from './model/ApiReader';
 
 // *** constant(s)
 const url = 'https://ghibliapi.herokuapp.com/films'
+const NoOfMovies = 6;
 
+// TODO: fix sorting by year. have no idea why it works for score but not for year
 // *** Actual App
 class App extends React.Component {
   state = {movies: []};
@@ -16,7 +18,11 @@ class App extends React.Component {
   }
 
   async fetchData() {
-    const data = await ApiReader(url);
+    const data = await ApiReader(url)
+    data.sort((a, b) => b.rt_score - a.rt_score)
+      .sort((a, b) => (b.year - a.year))
+    data.length = NoOfMovies;   // limit number of data
+    
     this.setState({ movies: data });
   }
 
