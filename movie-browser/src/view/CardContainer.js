@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 import React from 'react'
-import Card from './view/Card'
+import Card from './Card'
 
 const CardContainer = (props) => {
   return (

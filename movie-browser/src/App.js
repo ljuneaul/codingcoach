@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 import React from 'react'
-import CardContainer from './CardContainer'
+import CardContainer from './view/CardContainer'
 import ApiReader from './model/ApiReader';
 
 // *** constant(s)
@@ -20,7 +20,7 @@ class App extends React.Component {
   async fetchData() {
     const data = await ApiReader(url)
     data.sort((a, b) => b.rt_score - a.rt_score)
-      .sort((a, b) => (b.year - a.year))
+      .sort((a, b) => b.year - a.year)
     data.length = NoOfMovies;   // limit number of data
     
     this.setState({ movies: data });
