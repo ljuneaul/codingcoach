@@ -2,13 +2,13 @@
 import React from 'react'
 import Card from './Card'
 
-const NoOfMinMovies = 6
+const NoOfMinimumMovies = 6
 
 const CardContainer = (props) => {
   return (
     <div className='row'>
       {props.movies
-        .slice(0, NoOfMinMovies)
+        .slice(0, NoOfMinimumMovies)
         .map(movie =>
           <Card key={movie.id} {...movie} />
         )}

@@ -10,8 +10,6 @@ const ApiReader = url => fetch(url)
     const featuredMovieIndex = Math.floor(Math.random() * moviesData.length)
     const featuredMovieData = moviesData[featuredMovieIndex]
 
-    ES6 tip: when the keys and values are the same you can omit the value, like so:
-    
     return { moviesData, featuredMovieData }
   })
 
