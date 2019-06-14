@@ -4,10 +4,10 @@ import Card from './Card'
 
 const NoOfMinimumMovies = 6
 
-const CardContainer = (props) => {
+const CardContainer = ({ movies }) => {
   return (
     <div className='row'>
-      {props.movies
+      {movies
         .slice(0, NoOfMinimumMovies)
         .map(movie =>
           <Card key={movie.id} {...movie} />
