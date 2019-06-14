@@ -33,5 +33,4 @@ FeaturedMovie.defaultProps = {
   movie: { title : 'test title', director: 'Max'}
 }
 
-
 export default FeaturedMovie;

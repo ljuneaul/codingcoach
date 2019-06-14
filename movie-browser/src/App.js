@@ -40,7 +40,6 @@ class App extends React.Component {
   // *** display
   render() {
     const { movies, movie, btnTxt } = this.state;
-    console.log(movies);
     return (
       <div>
         <FeaturedMovie movie={movie}  />
