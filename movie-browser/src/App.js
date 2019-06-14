@@ -6,55 +6,45 @@ import ApiReader from './model/ApiReader';
 
 // *** constant(s)
 const url = 'https://ghibliapi.herokuapp.com/films'
-const btnTxtDef = "View all"
 
-// TODO: fix sorting by year. have no idea why it works for score but not for year
 // TODO: makes button working
 
 // *** Actual App
 class App extends React.Component {
-  state = {movies: [], featuredMovieIndex: 0, btnTxt: btnTxtDef};
+  state = {movies: [], movie: {}, btnTxt: "View all"};
 
   // *** running ApiReader when mounted
   componentDidMount() {
     this.fetchData();
   }
 
-  pickRandomMovieIndex = () => this.setState({
-    featuredMovieIndex: Math.floor(Math.random() * this.state.movies.length)
-  })
-
   handleClickButton = () => {
-    if (this.state.btnTxt === btnTxtDef) {
+    if (this.state.btnTxt === "View all") {
       this.setState({
         btnTxt: "Hide all"
       })
     } else {
       this.setState({
-        btnTxt: btnTxtDef
+        btnTxt: "View all"
       })
     }
-    
   }
 
   async fetchData() {
     const data = await ApiReader(url)
-
-    data.sort((a, b) => b.rt_score - a.rt_score)
-      .sort((a, b) => b.year - a.year)
     
-    this.setState({ movies: data });
-    this.pickRandomMovieIndex();
+    this.setState({ movies: data.moviesData });
+    this.setState({ movie: data.featuredMovieData });
   }
 
   // *** display
   render() {
-    const { movies, featuredMovieIndex, btnTxt } = this.state;
-
+    const { movies, movie, btnTxt } = this.state;
+    console.log(movies);
     return (
       <div>
-        <FeaturedMovie movie={movies[featuredMovieIndex]}  />
-        <CardContainer movies={movies}  />  {/* limit number of data */}
+        <FeaturedMovie movie={movie}  />
+        <CardContainer movies={movies}  />
         <button onClick={this.handleClickButton}>{ btnTxt }</button>
       </div>
     )

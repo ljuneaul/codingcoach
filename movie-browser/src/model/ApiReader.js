@@ -1,6 +1,16 @@
 const ApiReader = url => fetch(url)
-  .then(response => {
-    return response.json()
+  .then(async (response) => {
+    // all movies
+    const moviesData = await response.json()
+    moviesData
+      .sort((a, b) => b.release_date - a.release_date)
+      .sort((a, b) => b.rt_score - a.rt_score)
+
+    // single featured movie
+    const featuredMovieIndex = Math.floor(Math.random() * moviesData.length)
+    const featuredMovieData = moviesData[featuredMovieIndex]
+
+    return { moviesData: moviesData, featuredMovieData: featuredMovieData }
   })
 
 export default ApiReader

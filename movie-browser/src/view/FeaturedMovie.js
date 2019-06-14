@@ -8,14 +8,14 @@ class FeaturedMovie extends React.Component{
 
   handleClick = () => {
     this.setState(preState => ({isDetailShown: !preState.isDetailShown}));
-    console.log(this.props.movie)
   }
 
   render() {
     const { movie, isDetailShown } = this.props;
     const { title, director, release_date } = movie
+    
     return (
-      <div className="card" onClick={() => this.handleClick()}>
+      <div className="card" onClick={this.handleClick}>
           <div className="row card-body">
             <div className="col-sm-6">
               <h5 className="card-title"> { title } </h5>

@@ -2,7 +2,7 @@
 import React from 'react'
 import Card from './Card'
 
-let NoOfMinMovies = 6
+const NoOfMinMovies = 6
 
 const CardContainer = (props) => {
   return (
