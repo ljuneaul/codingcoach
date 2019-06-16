@@ -18,8 +18,8 @@ class FeaturedMovie extends React.Component{
     
     return (
       <div className="card border-secondary m-2" onClick={this.handleClick}>
-          <div className="row card-body">
-            <img className="col-sm-6" src="https://via.placeholder.com/300x150.png" alt={title}/>
+          <div className="row card-body py-1">
+            <img className="col-sm-6 p-1" src="https://via.placeholder.com/300x150.png" alt={title}/>
             <div className="col-sm-6">
               <h5 className="card-title"> {title} </h5>
               <p className="card-text"> {director} ({release_date}) </p>
