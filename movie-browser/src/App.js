@@ -11,7 +11,8 @@ class App extends Component {
   state = {
     allMovies: [],
     featuredMovie: {},
-    buttonText: "View all"
+    buttonText: "View all",
+    viewAll: false
   };
 
   // *** running ApiReader when mounted
@@ -22,21 +23,22 @@ class App extends Component {
   }
 
   handleClickButton = () => {
-    const { buttonText } = this.state;
+    const { buttonText, viewAll } = this.state;
 
     this.setState({
-      buttonText: buttonText === "View all" ? "Hide all" : "View all"
+      buttonText: buttonText === "View all" ? "Hide all" : "View all",
+      viewAll: viewAll === false ? true : false
     });
   };
 
   // *** display
   render() {
-    const { allMovies, featuredMovie, buttonText } = this.state;
+    const { allMovies, featuredMovie, buttonText, viewAll } = this.state;
 
     return (
       <div>
         <FeaturedMovie movie={featuredMovie} />
-        <CardContainer movies={allMovies} />
+        <CardContainer movies={allMovies} viewAll={viewAll} />
         <button onClick={this.handleClickButton}>{buttonText}</button>
       </div>
     );
