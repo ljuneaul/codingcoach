@@ -7,11 +7,13 @@ class FeaturedMovie extends React.Component{
   state = {shouldShowDetails: false}
 
   handleClick = () => {
+   
     this.setState(preState => ({shouldShowDetails: !preState.shouldShowDetails}));
   }
 
   render() {
-    const { movie, shouldShowDetails } = this.props;
+    const { movie } = this.props;
+    const { shouldShowDetails } = this.state
     const { title, director, release_date } = movie
     
     return (
