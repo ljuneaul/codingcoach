@@ -20,9 +20,9 @@ class FeaturedMovie extends React.Component{
       <div className="card" onClick={this.handleClick}>
           <div className="row card-body">
             <div className="col-sm-6">
-              <h5 className="card-title"> { title } </h5>
-              <p className="card-text"> { director } ({ release_date }) </p>
-              { shouldShowDetails ? <CardDetail { ...(this.props.movie) }/> : null}
+              <h5 className="card-title"> {title} </h5>
+              <p className="card-text"> {director} ({release_date}) </p>
+              {shouldShowDetails ? <CardDetail {...(this.props.movie)}/> : null}
             </div>
           <img className="col-sm-6" src="https://via.placeholder.com/300x150.png" alt="sans"/>
         </div>
