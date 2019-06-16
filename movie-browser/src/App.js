@@ -39,7 +39,7 @@ class App extends Component {
       <div>
         <FeaturedMovie movie={featuredMovie} />
         <CardContainer movies={allMovies} viewAll={viewAll} />
-        <button onClick={this.handleClickButton}>{buttonText}</button>
+        <button className='btn btn-outline-secondary' onClick={this.handleClickButton}>{buttonText}</button>
       </div>
     );
   }
