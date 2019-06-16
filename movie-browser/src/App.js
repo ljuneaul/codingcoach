@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import CardContainer from "./view/CardContainer";
 import FeaturedMovie from "./view/FeaturedMovie";
+import ViewAllButton from "./view/ViewAllButton";
 import ApiReader from "./model/ApiReader";
 
 // *** constant(s)
@@ -23,11 +24,12 @@ class App extends Component {
   }
 
   handleClickButton = () => {
+    console.log('clicked')
     const { buttonText, viewAll } = this.state;
 
     this.setState({
       buttonText: buttonText === "View all" ? "Hide all" : "View all",
-      viewAll: viewAll === false ? true : false
+      viewAll: !viewAll
     });
   };
 
@@ -37,9 +39,14 @@ class App extends Component {
 
     return (
       <div>
-        <FeaturedMovie movie={featuredMovie} />
-        <CardContainer movies={allMovies} viewAll={viewAll} />
-        <button className='btn btn-outline-secondary' onClick={this.handleClickButton}>{buttonText}</button>
+        <FeaturedMovie 
+          movie={featuredMovie} />
+        <CardContainer 
+          movies={allMovies} 
+          viewAll={viewAll} />
+        <ViewAllButton 
+          buttonText={buttonText}
+          onClick={this.handleClickButton} />
       </div>
     );
   }
