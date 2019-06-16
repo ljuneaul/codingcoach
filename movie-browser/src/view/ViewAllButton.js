@@ -1,9 +1,11 @@
 /* eslint-disable no-unused-vars */
 import React from 'react'
 
-const ViewAllButton = ({ buttonText, onClick }) => {
+const ViewAllButton = ({ buttonText, onClickHandler }) => {
   return (
-    <button onClick={onClick} className='btn btn-outline-secondary' >{ buttonText }</button>
+    <button onClick={onClickHandler} className='btn btn-outline-secondary'>
+      {buttonText}
+    </button>
   )
 }
 

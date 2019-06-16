@@ -46,7 +46,7 @@ class App extends Component {
           viewAll={viewAll} />
         <ViewAllButton 
           buttonText={buttonText}
-          onClick={this.handleClickButton} />
+          onClickHandler={this.handleClickButton} />
       </div>
     );
   }
