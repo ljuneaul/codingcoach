@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import CardContainer from "./view/CardContainer";
 import FeaturedMovie from "./view/FeaturedMovie";
+import ViewAllButton from "./view/ViewAllButton";
 import ApiReader from "./model/ApiReader";
 
 // *** constant(s)
@@ -11,7 +12,8 @@ class App extends Component {
   state = {
     allMovies: [],
     featuredMovie: {},
-    buttonText: "View all"
+    buttonText: "View all",
+    viewAll: false
   };
 
   // *** running ApiReader when mounted
@@ -22,22 +24,28 @@ class App extends Component {
   }
 
   handleClickButton = () => {
-    const { buttonText } = this.state;
+    const { buttonText, viewAll } = this.state;
 
     this.setState({
-      buttonText: buttonText === "View all" ? "Hide all" : "View all"
+      buttonText: buttonText === "View all" ? "Hide all" : "View all",
+      viewAll: !viewAll
     });
   };
 
   // *** display
   render() {
-    const { allMovies, featuredMovie, buttonText } = this.state;
+    const { allMovies, featuredMovie, buttonText, viewAll } = this.state;
 
     return (
       <div>
-        <FeaturedMovie movie={featuredMovie} />
-        <CardContainer movies={allMovies} />
-        <button onClick={this.handleClickButton}>{buttonText}</button>
+        <FeaturedMovie 
+          movie={featuredMovie} />
+        <CardContainer 
+          movies={allMovies} 
+          viewAll={viewAll} />
+        <ViewAllButton 
+          buttonText={buttonText}
+          onClickHandler={this.handleClickButton} />
       </div>
     );
   }

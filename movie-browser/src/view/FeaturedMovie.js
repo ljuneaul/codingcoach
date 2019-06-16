@@ -1,28 +1,28 @@
 import React from 'react';
 import CardDetail from './CardDetail.js'
 
-// TODO: makes toggle for detail view work. have no idea why it's not working for this one
-// toggle: https://stackoverflow.com/questions/29913387/show-hide-components-in-reactjs
 class FeaturedMovie extends React.Component{
-  state = {shouldShowDetails: false}
+  state = {showDetails: false};
 
   handleClick = () => {
-    this.setState(preState => ({shouldShowDetails: !preState.shouldShowDetails}));
+    this.setState(preState => ({showDetails: !preState.showDetails}));
   }
 
   render() {
-    const { movie, shouldShowDetails } = this.props;
-    const { title, director, release_date } = movie
+    const { movie } = this.props;
+    const { showDetails } = this.state;
+    const { title, director, release_date } = movie;
     
     return (
-      <div className="card" onClick={this.handleClick}>
-          <div className="row card-body">
+      <div className="card border-secondary m-2" onClick={this.handleClick}>
+          <div className="row card-body py-1">
+            <img className="col-sm-6 p-1" 
+              src="https://via.placeholder.com/300x150.png" alt={title}/>
             <div className="col-sm-6">
-              <h5 className="card-title"> { title } </h5>
-              <p className="card-text"> { director } ({ release_date }) </p>
-              { shouldShowDetails ? <CardDetail { ...(this.props.movie) }/> : null}
+              <h5 className="card-title"> {title} </h5>
+              <p className="card-text"> {director} ({release_date}) </p>
+              {showDetails ? <CardDetail {...(this.props.movie)}/> : null}
             </div>
-          <img className="col-sm-6" src="https://via.placeholder.com/300x150.png" alt="sans"/>
         </div>
       </div>
     );
