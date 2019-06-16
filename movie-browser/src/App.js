@@ -24,7 +24,6 @@ class App extends Component {
   }
 
   handleClickButton = () => {
-    console.log('clicked')
     const { buttonText, viewAll } = this.state;
 
     this.setState({

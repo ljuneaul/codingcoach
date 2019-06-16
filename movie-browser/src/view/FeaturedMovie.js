@@ -2,17 +2,16 @@ import React from 'react';
 import CardDetail from './CardDetail.js'
 
 class FeaturedMovie extends React.Component{
-  state = {showDetails: false}
+  state = {showDetails: false};
 
   handleClick = () => {
-   
     this.setState(preState => ({showDetails: !preState.showDetails}));
   }
 
   render() {
     const { movie } = this.props;
-    const { showDetails } = this.state
-    const { title, director, release_date } = movie
+    const { showDetails } = this.state;
+    const { title, director, release_date } = movie;
     
     return (
       <div className="card border-secondary m-2" onClick={this.handleClick}>
