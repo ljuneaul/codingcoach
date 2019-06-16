@@ -17,7 +17,7 @@ class FeaturedMovie extends React.Component{
     const { title, director, release_date } = movie
     
     return (
-      <div className="card" onClick={this.handleClick}>
+      <div className="card border-secondary m-2" onClick={this.handleClick}>
           <div className="row card-body">
             <img className="col-sm-6" src="https://via.placeholder.com/300x150.png" alt={title}/>
             <div className="col-sm-6">

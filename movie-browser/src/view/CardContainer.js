@@ -6,7 +6,7 @@ const NoOfMinimumMovies = 6
 
 const CardContainer = ({ movies, viewAll }) => {
   return (
-    <div className='row'>
+    <div className='row m-0'>
       {movies
         .slice(0, viewAll ? movies.length : NoOfMinimumMovies)
         .map(movie =>
