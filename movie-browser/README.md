@@ -14,12 +14,12 @@ The objective is to build an app to browse a set of movies
 on the web and get the inspiration from there
 
 ### App Structure
-* Initial section with a banner with a featured movie with minimal info, like netflix does
-* Second section with "most viewed movies". A list of 6 movies, displayed on
+* [x] Initial section with a banner with a featured movie with minimal info, like netflix does
+* [x] Second section with "most viewed movies". A list of 6 movies, displayed on
 two rows. So, 6 "cards" or "blocks" with a small image and name of the movie
-* A "View all" button should be present, and, upon click, should toggle all
+* [x] A "View all" button should be present, and, upon click, should toggle all
 the movies below it.
-* Upon clicking on any movie "card" or "block" a modal should open with ALL the
+* [x] Upon clicking on any movie "card" or "block" a modal should open with ALL the
 information for the movie.
 
 ### Notes
