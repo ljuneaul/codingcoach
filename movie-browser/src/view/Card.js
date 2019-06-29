@@ -1,5 +1,7 @@
 import React from 'react';
 import CardDetail from './CardDetail.js';
+import styled from 'styled-components';
+import CardWrapper from './style/CardStyle';
 
 class Card extends React.Component{
   state = {showDetails: false};
@@ -10,8 +12,7 @@ class Card extends React.Component{
 
   render() {
     return (
-      <div className="col-12 col-sm-6 col-md-4
-                      p-2">
+      <CardWrapper>
         <div className="card border-secondary h-100" onClick={this.handleClick}>
           <div className="card-body p-2">
           <img className="card-img-top" 
@@ -25,7 +26,7 @@ class Card extends React.Component{
             {this.state.showDetails ? <CardDetail {...(this.props)}/> : null}
           </div>
         </div>
-      </div>
+      </CardWrapper>
     );
   }
 }
