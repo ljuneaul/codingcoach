@@ -1,6 +1,5 @@
 import React from 'react';
 import CardDetail from './CardDetail.js';
-import styled from 'styled-components';
 import CardWrapper from './style/CardStyle';
 
 class Card extends React.Component{
